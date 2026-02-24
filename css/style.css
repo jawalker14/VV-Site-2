@@ -593,10 +593,13 @@ img {
 }
 
 .footer-logo {
+  /* Preserve aspect ratio even if other rules (or future edits) try to force both dimensions */
   width: 40px;
   height: auto;
   max-width: 100%;
+  aspect-ratio: auto;
   object-fit: contain;
+  flex: 0 0 auto;
   margin-bottom: 1rem;
 }
 
