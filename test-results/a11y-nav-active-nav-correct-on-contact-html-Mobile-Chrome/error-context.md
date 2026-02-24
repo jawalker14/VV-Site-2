@@ -2,11 +2,9 @@
 
 ```yaml
 - generic [active] [ref=e1]:
-  - link "Removed skip link" [ref=e2] [cursor=pointer]:
-    - /url: "#main"
-  - banner [ref=e3]:
-    - generic [ref=e4]:
-      - link "Vital Visibility logo" [ref=e5] [cursor=pointer]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Vital Visibility logo" [ref=e4] [cursor=pointer]:
         - /url: /index.html
         - img "Vital Visibility logo" [ref=e6] [cursor=pointer]
       - navigation "Primary" [ref=e7]:
@@ -20,7 +18,7 @@
     - generic [ref=e16]:
       - generic [ref=e17]:
         - heading "Get in Touch" [level=2] [ref=e18]
-        - paragraph [ref=e19]: Please fill out the form below to book a strategy call or send us a message. We’ll respond as quickly as possible.
+        - paragraph [ref=e19]: Please fill out the form below to send us a message. We’ll respond as quickly as possible.
         - paragraph [ref=e20]: If you prefer, you can also reach us by email or phone.
         - list [ref=e21]:
           - listitem [ref=e22]:
@@ -42,7 +40,7 @@
           - text: "POPIA: We collect only the information necessary to respond to your enquiry. By submitting this form you consent to our"
           - link "Privacy Policy" [ref=e34] [cursor=pointer]:
             - /url: /privacy.html
-          - text: . You may request data removal at any time.
+          - text: .
       - generic [ref=e37]:
         - generic [ref=e38]: Name
         - textbox "Name" [ref=e39]
@@ -64,80 +62,78 @@
   - contentinfo [ref=e51]:
     - generic [ref=e52]:
       - generic [ref=e53]:
-        - img "Vital Visibility logo" [ref=e54]
-        - paragraph [ref=e55]: AI‑powered digital marketing for South African healthcare professionals.
-      - generic [ref=e56]:
-        - heading "Links" [level=4] [ref=e57]
-        - list [ref=e58]:
-          - listitem [ref=e59]:
-            - link "Home" [ref=e60] [cursor=pointer]:
+        - img "Vital Visibility logo" [ref=e55]
+        - paragraph [ref=e56]: AI‑powered digital marketing for South African healthcare professionals.
+      - generic [ref=e57]:
+        - heading "Links" [level=4] [ref=e58]
+        - list [ref=e59]:
+          - listitem [ref=e60]:
+            - link "Home" [ref=e61] [cursor=pointer]:
               - /url: /index.html
-          - listitem [ref=e61]:
-            - link "Services" [ref=e62] [cursor=pointer]:
+          - listitem [ref=e62]:
+            - link "Services" [ref=e63] [cursor=pointer]:
               - /url: /services.html
-          - listitem [ref=e63]:
-            - link "Pricing" [ref=e64] [cursor=pointer]:
+          - listitem [ref=e64]:
+            - link "Pricing" [ref=e65] [cursor=pointer]:
               - /url: /pricing.html
-          - listitem [ref=e65]:
-            - link "Websites" [ref=e66] [cursor=pointer]:
+          - listitem [ref=e66]:
+            - link "Websites" [ref=e67] [cursor=pointer]:
               - /url: /services/websites.html
-          - listitem [ref=e67]:
-            - link "Maintenance" [ref=e68] [cursor=pointer]:
+          - listitem [ref=e68]:
+            - link "Maintenance" [ref=e69] [cursor=pointer]:
               - /url: /services/maintenance.html
-          - listitem [ref=e69]:
-            - link "Google Ads" [ref=e70] [cursor=pointer]:
+          - listitem [ref=e70]:
+            - link "Google Ads" [ref=e71] [cursor=pointer]:
               - /url: /services/google-ads.html
-          - listitem [ref=e71]:
-            - link "Meta Ads" [ref=e72] [cursor=pointer]:
+          - listitem [ref=e72]:
+            - link "Meta Ads" [ref=e73] [cursor=pointer]:
               - /url: /services/meta-ads.html
-          - listitem [ref=e73]:
-            - link "Meta Content" [ref=e74] [cursor=pointer]:
+          - listitem [ref=e74]:
+            - link "Meta Content" [ref=e75] [cursor=pointer]:
               - /url: /services/meta-content.html
-          - listitem [ref=e75]:
-            - link "Branding" [ref=e76] [cursor=pointer]:
+          - listitem [ref=e76]:
+            - link "Branding" [ref=e77] [cursor=pointer]:
               - /url: /services/branding.html
-          - listitem [ref=e77]:
-            - link "Logo" [ref=e78] [cursor=pointer]:
+          - listitem [ref=e78]:
+            - link "Logo" [ref=e79] [cursor=pointer]:
               - /url: /services/logo.html
-          - listitem [ref=e79]:
-            - link "About" [ref=e80] [cursor=pointer]:
+          - listitem [ref=e80]:
+            - link "About" [ref=e81] [cursor=pointer]:
               - /url: /about.html
-          - listitem [ref=e81]:
-            - link "Contact" [ref=e82] [cursor=pointer]:
+          - listitem [ref=e82]:
+            - link "Contact" [ref=e83] [cursor=pointer]:
               - /url: /contact.html
-      - generic [ref=e83]:
-        - heading "Contact" [level=4] [ref=e84]
-        - paragraph [ref=e85]:
+      - generic [ref=e84]:
+        - heading "Contact" [level=4] [ref=e85]
+        - paragraph [ref=e86]:
           - text: "Email:"
-          - link "jack@vitalvisibility.co.za" [ref=e86] [cursor=pointer]:
+          - link "jack@vitalvisibility.co.za" [ref=e87] [cursor=pointer]:
             - /url: mailto:jack@vitalvisibility.co.za
-        - paragraph [ref=e87]:
+        - paragraph [ref=e88]:
           - text: "Phone:"
-          - link "+27 81 095 8672" [ref=e88] [cursor=pointer]:
+          - link "+27 81 095 8672" [ref=e89] [cursor=pointer]:
             - /url: tel:+27810958672
-        - paragraph [ref=e89]:
+        - paragraph [ref=e90]:
           - text: "WhatsApp:"
-          - link "Send a message" [ref=e90] [cursor=pointer]:
+          - link "Send a message" [ref=e91] [cursor=pointer]:
             - /url: https://wa.me/27810958672
-        - paragraph [ref=e91]: "Company Reg #: 2025/626274/07"
-    - generic [ref=e92]:
-      - paragraph [ref=e93]: © 2025 Vital Visibility (Pty) Ltd. All rights reserved. We align all messaging with HPCSA Ethical Rules; no testimonials or inducements appear on this site.
-      - paragraph [ref=e94]:
-        - link "Privacy Policy" [ref=e95] [cursor=pointer]:
+        - paragraph [ref=e92]: "Company Reg #: 2025/626274/07"
+    - generic [ref=e93]:
+      - paragraph [ref=e94]: © 2025 Vital Visibility (Pty) Ltd. All rights reserved. We align all messaging with HPCSA Ethical Rules; no testimonials or inducements appear on this site.
+      - paragraph [ref=e95]:
+        - link "Privacy Policy" [ref=e96] [cursor=pointer]:
           - /url: /privacy.html
         - text: ·
-        - link "Terms of Service" [ref=e96] [cursor=pointer]:
+        - link "Terms of Service" [ref=e97] [cursor=pointer]:
           - /url: /terms.html
         - text: ·
-        - link "POPIA" [ref=e97] [cursor=pointer]:
-          - /url: /contact.html#popia
-  - generic [ref=e99]:
+        - link "POPIA" [ref=e98] [cursor=pointer]:
+          - /url: /privacy.html#popia
+  - dialog [ref=e99]:
     - generic [ref=e100]:
-      - text: We use optional analytics to improve the site. Consent to enable. See our
-      - link "Privacy Policy" [ref=e101] [cursor=pointer]:
-        - /url: /privacy.html
-      - text: .
-    - generic [ref=e102]:
-      - button "Accept" [ref=e103] [cursor=pointer]
-      - button "Decline" [ref=e104] [cursor=pointer]
+      - generic [ref=e101]: We use non-essential analytics only with your consent. Manage your choices in Cookie Preferences.
+      - generic [ref=e102]:
+        - button "Reject" [ref=e103]
+        - button "Accept" [ref=e104]
+        - button "Cookie Preferences" [ref=e105]
 ```
