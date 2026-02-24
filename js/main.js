@@ -3,20 +3,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mark active nav link with aria-current
   (function activateNav() {
-    const path = location.pathname.replace(/\/$/, '');
+    const rawPath = location.pathname;
+    const path = rawPath.replace(/\/$/, '') || '/';
     const htmlPath = path.endsWith('.html') ? path : `${path}.html`;
-    const candidates = new Set([path || '/index.html', htmlPath, '/index.html']);
-    document.querySelectorAll('#site-nav a[href]').forEach((a) => {
+
+    /** @type {HTMLAnchorElement[]} */
+    const navLinks = Array.from(document.querySelectorAll('#site-nav a[href]'));
+
+    const getPathname = (a) => {
       try {
-        const href = new URL(a.getAttribute('href'), location.origin).pathname.replace(/\/$/, '');
-        if (candidates.has(href)) {
-          a.classList.add('is-active');
-          a.setAttribute('aria-current', 'page');
-        } else {
-          a.removeAttribute('aria-current');
-          a.classList.remove('is-active');
-        }
-      } catch (_) { /* ignore invalid URLs */ }
+        return new URL(a.getAttribute('href') || '', location.origin).pathname.replace(/\/$/, '') || '/';
+      } catch {
+        return null;
+      }
+    };
+
+    // Prefer exactly one best match:
+    // 1) exact pathname match
+    // 2) html variant match
+    // 3) (only for home) treat "/" and "/index.html" as equivalent
+    const exactMatches = navLinks.filter(a => getPathname(a) === path);
+    const htmlMatches = navLinks.filter(a => getPathname(a) === htmlPath);
+
+    let current = /** @type {HTMLAnchorElement|null} */ (null);
+    if (exactMatches.length) current = exactMatches[0];
+    else if (htmlMatches.length) current = htmlMatches[0];
+    else if (path === '/' || htmlPath === '/index.html') {
+      current = navLinks.find(a => {
+        const p = getPathname(a);
+        return p === '/' || p === '/index.html';
+      }) || null;
+    }
+
+    navLinks.forEach((a) => {
+      if (a === current) {
+        a.classList.add('is-active');
+        a.setAttribute('aria-current', 'page');
+      } else {
+        a.removeAttribute('aria-current');
+        a.classList.remove('is-active');
+      }
     });
   })();
 
@@ -145,8 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Active nav state based on hash
   function setActive() {
     const hash = location.hash;
-    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-    if (hash) document.querySelectorAll(`nav a[href='${hash}']`).forEach(a => a.classList.add('active'));
+  // Only manage "active" for *in-page* anchor links so we don't accidentally
+  // mark multiple page links as current/active in the primary nav.
+  const inPageLinks = document.querySelectorAll('nav a[href^="#"]');
+  inPageLinks.forEach(a => a.classList.remove('active'));
+  if (hash) document.querySelectorAll(`nav a[href='${hash}']`).forEach(a => a.classList.add('active'));
   }
   window.addEventListener('hashchange', setActive);
   setActive();

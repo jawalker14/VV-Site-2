@@ -101,14 +101,35 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
 .logo {
-  height: 240px;
-  width: 240px;
+  /* 5× increase from previous rendered size (240px → 1200px) */
+  height: 1200px;
+  width: auto;
   aspect-ratio: 1 / 1;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Keep the header usable even with a very large logo */
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.site-nav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.whatsapp-button {
+  flex: 0 0 auto;
 }
 
 .site-nav ul {
@@ -628,6 +649,10 @@ img {
     align-items: flex-start;
   }
 
+  .logo-link {
+    flex: 1 1 100%;
+  }
+
   .site-nav {
     margin-left: auto;
     position: relative;
@@ -639,7 +664,8 @@ img {
 
   .site-nav ul {
     position: absolute;
-    top: calc(100% + 0.5rem);
+  /* Anchor the dropdown to the toggle line, not under the (now huge) header */
+  top: 0;
     right: 0;
     background-color: var(--vv-bg);
     flex-direction: column;
