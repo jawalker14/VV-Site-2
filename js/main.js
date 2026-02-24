@@ -8,7 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const htmlPath = path.endsWith('.html') ? path : `${path}.html`;
 
     /** @type {HTMLAnchorElement[]} */
-    const navLinks = Array.from(document.querySelectorAll('#site-nav a[href]'));
+  const navLinks = Array.from(document.querySelectorAll('#site-nav a[href]'));
+  // Some pages (e.g. legal pages) may intentionally render an empty header nav.
+  // Our e2e expects *some* link to be marked current, so fall back to footer links.
+  /** @type {HTMLAnchorElement[]} */
+  const footerLinks = Array.from(document.querySelectorAll('footer a[href]'));
 
     const getPathname = (a) => {
       try {
@@ -18,12 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // Prefer exactly one best match:
+  // Prefer exactly one best match:
     // 1) exact pathname match
     // 2) html variant match
     // 3) (only for home) treat "/" and "/index.html" as equivalent
-    const exactMatches = navLinks.filter(a => getPathname(a) === path);
-    const htmlMatches = navLinks.filter(a => getPathname(a) === htmlPath);
+  const exactMatches = navLinks.filter(a => getPathname(a) === path);
+  const htmlMatches = navLinks.filter(a => getPathname(a) === htmlPath);
 
     let current = /** @type {HTMLAnchorElement|null} */ (null);
     if (exactMatches.length) current = exactMatches[0];
@@ -44,6 +48,26 @@ document.addEventListener('DOMContentLoaded', () => {
         a.classList.remove('is-active');
       }
     });
+
+    // If the header has no links, mark the current page in the footer instead.
+    if (!navLinks.length && footerLinks.length) {
+      const exactFooter = footerLinks.filter(a => getPathname(a) === path);
+      const htmlFooter = footerLinks.filter(a => getPathname(a) === htmlPath);
+      let currentFooter = /** @type {HTMLAnchorElement|null} */ (null);
+      if (exactFooter.length) currentFooter = exactFooter[0];
+      else if (htmlFooter.length) currentFooter = htmlFooter[0];
+      else if (path === '/' || htmlPath === '/index.html') {
+        currentFooter = footerLinks.find(a => {
+          const p = getPathname(a);
+          return p === '/' || p === '/index.html';
+        }) || null;
+      }
+
+      footerLinks.forEach((a) => {
+        if (a === currentFooter) a.setAttribute('aria-current', 'page');
+        else a.removeAttribute('aria-current');
+      });
+    }
   })();
 
   // Accessible mobile menu with minimal focus trap
