@@ -67,18 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  // Skip-to-content: programmatically focus main
-  (function skipToContent() {
-    const main = document.getElementById('main');
-    if (!main) return;
-    document.querySelectorAll('a.skip-link').forEach((link) => {
-      link.addEventListener('click', () => {
-        main.setAttribute('tabindex', '-1');
-        main.focus();
-      });
-    });
-  })();
-
   // Contact form client-side validation/status handling
   const form = document.querySelector('#contact-form');
   const status = document.querySelector('#form-status');

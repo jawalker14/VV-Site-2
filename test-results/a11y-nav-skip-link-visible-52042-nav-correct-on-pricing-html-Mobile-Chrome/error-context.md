@@ -2,7 +2,7 @@
 
 ```yaml
 - generic [active] [ref=e1]:
-  - link "Skip to content" [ref=e2] [cursor=pointer]:
+  - link "Removed skip link" [ref=e2] [cursor=pointer]:
     - /url: "#main"
   - banner [ref=e3]:
     - generic [ref=e4]:

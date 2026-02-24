@@ -2,11 +2,9 @@
 
 ```yaml
 - generic [active] [ref=e1]:
-  - link "Removed skip link" [ref=e2] [cursor=pointer]:
-    - /url: "#main"
-  - banner [ref=e3]:
-    - generic [ref=e4]:
-      - link "Vital Visibility logo" [ref=e5] [cursor=pointer]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Vital Visibility logo" [ref=e4] [cursor=pointer]:
         - /url: /index.html
         - img "Vital Visibility logo" [ref=e6] [cursor=pointer]
       - navigation "Primary" [ref=e7]:
@@ -59,80 +57,78 @@
   - contentinfo [ref=e49]:
     - generic [ref=e50]:
       - generic [ref=e51]:
-        - img "Vital Visibility logo" [ref=e52]
-        - paragraph [ref=e53]: AI‑powered digital marketing for South African healthcare professionals.
-      - generic [ref=e54]:
-        - heading "Links" [level=4] [ref=e55]
-        - list [ref=e56]:
-          - listitem [ref=e57]:
-            - link "Home" [ref=e58] [cursor=pointer]:
+        - img "Vital Visibility logo" [ref=e53]
+        - paragraph [ref=e54]: AI‑powered digital marketing for South African healthcare professionals.
+      - generic [ref=e55]:
+        - heading "Links" [level=4] [ref=e56]
+        - list [ref=e57]:
+          - listitem [ref=e58]:
+            - link "Home" [ref=e59] [cursor=pointer]:
               - /url: /index.html
-          - listitem [ref=e59]:
-            - link "Services" [ref=e60] [cursor=pointer]:
+          - listitem [ref=e60]:
+            - link "Services" [ref=e61] [cursor=pointer]:
               - /url: /services.html
-          - listitem [ref=e61]:
-            - link "Pricing" [ref=e62] [cursor=pointer]:
+          - listitem [ref=e62]:
+            - link "Pricing" [ref=e63] [cursor=pointer]:
               - /url: /pricing.html
-          - listitem [ref=e63]:
-            - link "Websites" [ref=e64] [cursor=pointer]:
+          - listitem [ref=e64]:
+            - link "Websites" [ref=e65] [cursor=pointer]:
               - /url: /services/websites.html
-          - listitem [ref=e65]:
-            - link "Maintenance" [ref=e66] [cursor=pointer]:
+          - listitem [ref=e66]:
+            - link "Maintenance" [ref=e67] [cursor=pointer]:
               - /url: /services/maintenance.html
-          - listitem [ref=e67]:
-            - link "Google Ads" [ref=e68] [cursor=pointer]:
+          - listitem [ref=e68]:
+            - link "Google Ads" [ref=e69] [cursor=pointer]:
               - /url: /services/google-ads.html
-          - listitem [ref=e69]:
-            - link "Meta Ads" [ref=e70] [cursor=pointer]:
+          - listitem [ref=e70]:
+            - link "Meta Ads" [ref=e71] [cursor=pointer]:
               - /url: /services/meta-ads.html
-          - listitem [ref=e71]:
-            - link "Meta Content" [ref=e72] [cursor=pointer]:
+          - listitem [ref=e72]:
+            - link "Content & Social" [ref=e73] [cursor=pointer]:
               - /url: /services/meta-content.html
-          - listitem [ref=e73]:
-            - link "Branding" [ref=e74] [cursor=pointer]:
+          - listitem [ref=e74]:
+            - link "Branding" [ref=e75] [cursor=pointer]:
               - /url: /services/branding.html
-          - listitem [ref=e75]:
-            - link "Logo" [ref=e76] [cursor=pointer]:
+          - listitem [ref=e76]:
+            - link "Logo" [ref=e77] [cursor=pointer]:
               - /url: /services/logo.html
-          - listitem [ref=e77]:
-            - link "About" [ref=e78] [cursor=pointer]:
+          - listitem [ref=e78]:
+            - link "About" [ref=e79] [cursor=pointer]:
               - /url: /about.html
-          - listitem [ref=e79]:
-            - link "Contact" [ref=e80] [cursor=pointer]:
+          - listitem [ref=e80]:
+            - link "Contact" [ref=e81] [cursor=pointer]:
               - /url: /contact.html
-      - generic [ref=e81]:
-        - heading "Contact" [level=4] [ref=e82]
-        - paragraph [ref=e83]:
+      - generic [ref=e82]:
+        - heading "Contact" [level=4] [ref=e83]
+        - paragraph [ref=e84]:
           - text: "Email:"
-          - link "jack@vitalvisibility.co.za" [ref=e84] [cursor=pointer]:
+          - link "jack@vitalvisibility.co.za" [ref=e85] [cursor=pointer]:
             - /url: mailto:jack@vitalvisibility.co.za
-        - paragraph [ref=e85]:
+        - paragraph [ref=e86]:
           - text: "Phone:"
-          - link "+27 81 095 8672" [ref=e86] [cursor=pointer]:
+          - link "+27 81 095 8672" [ref=e87] [cursor=pointer]:
             - /url: tel:+27810958672
-        - paragraph [ref=e87]:
+        - paragraph [ref=e88]:
           - text: "WhatsApp:"
-          - link "Send a message" [ref=e88] [cursor=pointer]:
+          - link "Send a message" [ref=e89] [cursor=pointer]:
             - /url: https://wa.me/27810958672
-        - paragraph [ref=e89]: "Company Reg #: 2025/626274/07"
-    - generic [ref=e90]:
-      - paragraph [ref=e91]: © 2025 Vital Visibility (Pty) Ltd. All rights reserved. We align all messaging with HPCSA Ethical Rules; no testimonials or inducements appear on this site.
-      - paragraph [ref=e92]:
-        - link "Privacy Policy" [ref=e93] [cursor=pointer]:
-          - /url: privacy.html
+        - paragraph [ref=e90]: "Company Reg #: 2025/626274/07"
+    - generic [ref=e91]:
+      - paragraph [ref=e92]: © 2025 Vital Visibility (Pty) Ltd. All rights reserved. We align all messaging with HPCSA Ethical Rules; no testimonials or inducements appear on this site.
+      - paragraph [ref=e93]:
+        - link "Privacy Policy" [ref=e94] [cursor=pointer]:
+          - /url: /privacy.html
         - text: ·
-        - link "Terms of Service" [ref=e94] [cursor=pointer]:
-          - /url: terms.html
+        - link "Terms of Service" [ref=e95] [cursor=pointer]:
+          - /url: /terms.html
         - text: ·
-        - link "POPIA" [ref=e95] [cursor=pointer]:
-          - /url: contact.html#popia
-  - generic [ref=e97]:
+        - link "POPIA" [ref=e96] [cursor=pointer]:
+          - /url: /privacy.html#popia
+  - dialog [ref=e97]:
     - generic [ref=e98]:
-      - text: We use optional analytics to improve the site. Consent to enable. See our
-      - link "Privacy Policy" [ref=e99] [cursor=pointer]:
-        - /url: /privacy.html
-      - text: .
-    - generic [ref=e100]:
-      - button "Accept" [ref=e101] [cursor=pointer]
-      - button "Decline" [ref=e102] [cursor=pointer]
+      - generic [ref=e99]: We use non-essential analytics only with your consent. Manage your choices in Cookie Preferences.
+      - generic [ref=e100]:
+        - button "Reject" [ref=e101]
+        - button "Accept" [ref=e102]
+        - button "Cookie Preferences" [ref=e103]
 ```
