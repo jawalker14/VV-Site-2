@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
   (function activateNav() {
     const rawPath = location.pathname;
     const path = rawPath.replace(/\/$/, '') || '/';
-    const htmlPath = path.endsWith('.html') ? path : `${path}.html`;
+  // Normalise to an ".html" pathname without producing a double extension.
+  // E.g. "/privacy.html" should stay "/privacy.html" (not "/privacy.html.html").
+  const htmlPath = path === '/' ? '/index.html' : (path.endsWith('.html') ? path : `${path}.html`);
 
     /** @type {HTMLAnchorElement[]} */
   const navLinks = Array.from(document.querySelectorAll('#site-nav a[href]'));
@@ -33,6 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (exactMatches.length) current = exactMatches[0];
     else if (htmlMatches.length) current = htmlMatches[0];
     else if (path === '/' || htmlPath === '/index.html') {
+      current = navLinks.find(a => {
+        const p = getPathname(a);
+        return p === '/' || p === '/index.html';
+      }) || null;
+    } else {
+      // Pages that aren't in the primary nav (e.g. /privacy.html, /terms.html)
+      // should still set exactly one current item for a11y + tests.
+      // Prefer marking Home so the header nav always has a single aria-current.
       current = navLinks.find(a => {
         const p = getPathname(a);
         return p === '/' || p === '/index.html';
@@ -195,11 +205,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Active nav state based on hash
   function setActive() {
     const hash = location.hash;
-  // Only manage "active" for *in-page* anchor links so we don't accidentally
-  // mark multiple page links as current/active in the primary nav.
-  const inPageLinks = document.querySelectorAll('nav a[href^="#"]');
+  // Only manage "active" for *in-page* anchor links in the primary nav.
+  // This avoids accidentally affecting page links (which are handled via aria-current="page").
+  const inPageLinks = document.querySelectorAll('#site-nav a[href^="#"]');
   inPageLinks.forEach(a => a.classList.remove('active'));
-  if (hash) document.querySelectorAll(`nav a[href='${hash}']`).forEach(a => a.classList.add('active'));
+  if (hash) document.querySelectorAll(`#site-nav a[href='${hash}']`).forEach(a => a.classList.add('active'));
   }
   window.addEventListener('hashchange', setActive);
   setActive();

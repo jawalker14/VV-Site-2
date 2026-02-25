@@ -107,9 +107,10 @@ img {
 }
 
 .logo {
-  /* 5× increase from previous rendered size (240px → 1200px) */
-  height: 1200px;
-  width: auto;
+  /* Keep logo large enough for branding, but never allow it to overflow
+    and intercept clicks (Playwright + mobile users). */
+  height: auto;
+  width: clamp(56px, 10vw, 88px);
   aspect-ratio: 1 / 1;
   object-fit: contain;
   pointer-events: none;
