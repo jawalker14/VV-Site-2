@@ -45,3 +45,4 @@ We ship a minimal `vercel.json` to prevent redirect loops and map popular paths 
 
 ## Deployment
 Push to the protected branch; Vercel will deploy. After deploy, test in Chrome DevTools → Network (Preserve log, Disable cache) that navigation to About/Services/Pricing/Contact have 200 HTML with no repeated 30x chains.
+# VV-Site-2
