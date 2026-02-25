@@ -36,17 +36,15 @@
     if (localStorage.getItem(CONSENT_KEY)) return;
     const banner = document.createElement('div');
     banner.setAttribute('role', 'dialog');
-    banner.style.position = 'fixed';
-    banner.style.bottom = '0'; banner.style.left = '0'; banner.style.right = '0';
-    banner.style.padding = '12px'; banner.style.background = '#27287B'; banner.style.color = '#fff';
-    banner.style.zIndex = '9999';
+    banner.id = 'consent-banner';
+    banner.className = 'vv-consent-banner';
     banner.innerHTML = `
-      <div style="max-width:960px;margin:0 auto;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;">
+      <div class="vv-consent-banner__inner">
         <span>We use non-essential analytics only with your consent. Manage your choices in Cookie Preferences.</span>
-        <div style="display:flex;gap:8px;">
-          <button id="vv-reject" style="padding:8px 12px;">Reject</button>
-          <button id="vv-accept" style="padding:8px 12px;font-weight:700;">Accept</button>
-          <button id="vv-prefs" style="padding:8px 12px;">Cookie Preferences</button>
+        <div class="vv-consent-banner__actions">
+          <button id="vv-reject" class="vv-consent-btn vv-consent-btn--reject" type="button">Reject</button>
+          <button id="vv-accept" class="vv-consent-btn vv-consent-btn--accept" type="button">Accept</button>
+          <button id="vv-prefs" class="vv-consent-btn vv-consent-btn--prefs" type="button">Cookie Preferences</button>
         </div>
       </div>`;
     document.body.appendChild(banner);
