@@ -72,6 +72,19 @@ h4,
   font-weight: 600;
 }
 
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -215,6 +228,32 @@ img {
 
 .hero-content .subhead {
   margin-bottom: 0.75rem;
+}
+
+/* Hero "Who we help" chips (subtle) */
+.hero .who-we-help-list {
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.hero .who-we-help-list a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--vv-border);
+  border-radius: 999px;
+  background: var(--vv-surface);
+  color: var(--vv-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero .who-we-help-list a:hover,
+.hero .who-we-help-list a:focus-visible {
+  border-color: var(--vv-border-strong);
+  color: var(--vv-accent);
+  text-decoration: none;
 }
 
 .btn-primary,
