@@ -314,6 +314,28 @@ img {
   margin-bottom: 2rem;
 }
 
+.services-subheading {
+  text-align: center;
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--vv-muted);
+  letter-spacing: 0.01em;
+}
+
+.services-grid--secondary {
+  gap: 1.25rem;
+}
+
+.service-card--primary {
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.service-card--secondary {
+  background-color: var(--vv-surface);
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
